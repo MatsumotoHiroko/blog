@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+binding.pry
+    @articles = Article.order(:id).page params[:page]
   end
 
   def show
